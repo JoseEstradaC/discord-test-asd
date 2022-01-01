@@ -1,12 +1,12 @@
 // https://discord.com/oauth2/authorize?client_id=926701718740275210&scope=bot&permissions=8
 
 import { Client, Intents } from 'discord.js'
-// import { MongoMemoryServer } from 'mongodb-memory-server'
+import { MongoMemoryServer } from 'mongodb-memory-server'
 
-// const mongod = await MongoMemoryServer.create()
+const mongod = await MongoMemoryServer.create()
 
-// const uri = mongod.getUri()
-// console.log(uri)
+const uri = mongod.getUri()
+console.log(uri)
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS],

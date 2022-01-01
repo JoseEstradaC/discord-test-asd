@@ -27,5 +27,6 @@ client.on('messageCreate', interaction => {
   console.log(comando)
   if (comando[0] === 'asd') {
     client.destroy()
+    process.exit()
   }
 })

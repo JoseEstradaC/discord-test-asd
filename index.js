@@ -2,6 +2,8 @@
 
 import { Client, Intents } from 'discord.js'
 import { MongoMemoryServer } from 'mongodb-memory-server'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const mongod = await MongoMemoryServer.create()
 
@@ -12,7 +14,7 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS],
 })
 
-client.login('OTI2NzAxNzE4NzQwMjc1MjEw.Yc_gOw.WuMraEmD_zgsBaSKHLbOZ4PwJi8')
+client.login(process.env.DISCORD_TOKEN)
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
